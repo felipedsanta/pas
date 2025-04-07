@@ -1,28 +1,21 @@
-package roteiro1parte1;
+package roteiro1.parte3;
 
 import java.util.List;
 
 public class PedidoService {
     private MysqlConnection connection;
+    private CalculadoraPreco calculadora;
     private List<String> itens;
 
-    public PedidoService(List<String> itens) {
+    public PedidoService(MysqlConnection connection, List<String> itens) {
         this.connection = new MysqlConnection();
+        this.calculadora = new CalculadoraPreco();
         this.itens = itens;
     }
 
     public void processarPedido(){
         this.connection.connect();
-        double total = calcularTotal();
+        double total = this.calculadora.calcularTotal(this.itens);
         System.out.println("Pedido processado. Valor total: R$ " + total);
-    }
-
-    private double calcularTotal(){
-        double total = 0;
-        for (String item : itens) {
-            if (item.equals("Pizza")) total += 30.0;
-            else if(item.equals("Bebida")) total += 10.0;
-        }
-        return total;
     }
 }

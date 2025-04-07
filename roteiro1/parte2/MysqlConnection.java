@@ -1,4 +1,4 @@
-package roteiro1parte1;
+package roteiro1.parte2;
 
 public class MysqlConnection {
     

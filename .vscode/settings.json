@@ -1,10 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "roteiro1parte1",
-        "roteiro1parte2",
-        "roteiro1parte3",
-        "roteiro1parte4",
-        "roteiro1parte5"
+        "."
     ],
     "java.project.referencedLibraries": []
 }

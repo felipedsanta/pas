@@ -1,15 +1,16 @@
-package roteiro1parte4;
+package roteiro1.parte5;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestePedido {
     public static void main(String[] args) {
+
         List<String> lista = new ArrayList<>();
         lista.add("Pizza");
         lista.add("Bebida");
 
-        PedidoService pedidoService = new PedidoService(lista);
+        PedidoService pedidoService = new PedidoService(null, lista);
         pedidoService.processarPedido();
     }
 }

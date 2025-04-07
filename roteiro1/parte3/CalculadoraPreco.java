@@ -1,4 +1,4 @@
-package roteiro1parte3;
+package roteiro1.parte3;
 
 import java.util.List;
 
