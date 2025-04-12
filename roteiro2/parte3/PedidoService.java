@@ -1,21 +1,16 @@
-package roteiro2.parte1;
+package roteiro2.parte3;
 
 import java.util.List;
 
 public class PedidoService {
     private List<String> itens;
     private double total;
+    private RegraDesconto regraDesconto;
 
-    public PedidoService(List<String> itens) {
+    public PedidoService(List<String> itens, RegraDesconto regraDesconto) {
         this.itens = itens;
+        this.regraDesconto = regraDesconto;
         this.total = calcularTotal();
-    }
-
-    public double aplicarDesconto(double desconto) {
-        if (desconto > 0 && desconto <= 0.3) {
-            return total - (total * desconto);
-        }
-        return total;
     }
 
     private double calcularTotal() {
@@ -31,8 +26,8 @@ public class PedidoService {
         return total;
     }
 
-    public void processarPedido(double desconto) {
-        double valorFinal = aplicarDesconto(desconto);
+    public void processarPedido() {
+        double valorFinal = regraDesconto.calcular(total);
         System.out.println("Pedido processado. Valor final com desconto: R$ " + valorFinal);
     }
 }
